@@ -1,0 +1,104 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6f8;
+  color: #1f2937;
+}
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #111827;
+  color: white;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+.sidebar, .panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+.sidebar { align-self: start; }
+.content { min-width: 0; }
+.panel { margin-bottom: 20px; }
+form {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+input, textarea, select, button {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+}
+textarea { min-height: 100px; resize: vertical; }
+button {
+  cursor: pointer;
+  background: #111827;
+  color: white;
+  border: none;
+}
+button:hover { opacity: .9; }
+.search-row, .tool-row {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+.search-row input, .tool-row input { flex: 1; }
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.note-card {
+  padding: 16px;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  margin: 0;
+  background: #fff;
+}
+.note-card.highlight { outline: 3px solid #f59e0b; }
+.note-card h3 { margin-top: 0; }
+.note-card .meta { color: #64748b; font-size: .9rem; }
+.ai-box {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #eef2ff;
+}
+.ai-box button { margin-top: 8px; }
+.tag-buttons { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
+.tag-buttons button { font-size: .85rem; }
+.tree ul { list-style: none; padding-left: 18px; margin: 4px 0; }
+.tree-node { cursor: pointer; padding: 4px; }
+.tree-node:hover { background: #f1f5f9; }
+.hidden { display: none; }
+.error { color: #b91c1c; margin-top: 8px; }
+.smart-panel { border-left: 4px solid #6366f1; }
+.smart-result {
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ddd6fe;
+  border-radius: 8px;
+}
+footer { text-align: center; padding: 30px; color: #64748b; }
+
+@media (max-width: 600px) {
+  .layout { grid-template-columns: 1fr; }
+  .notes-grid { grid-template-columns: 1fr; }
+  .search-row, .tool-row { flex-direction: column; }
+  .top-nav { flex-direction: column; gap: 6px; }
+}

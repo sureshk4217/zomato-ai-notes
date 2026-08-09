@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+backend/.env
+backend/zomato_notes.db
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store

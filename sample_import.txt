@@ -1,0 +1,5 @@
+Imported incident note: payment API latency increased during the afternoon deployment.
+Imported incident note: frontend checkout errors were traced to an expired configuration value.
+Imported incident note: database connection pool reached its configured limit.
+Imported incident note: cache invalidation reduced repeated downstream requests.
+Imported incident note: rollback completed successfully and error rate returned to normal.

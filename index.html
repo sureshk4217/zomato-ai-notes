@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="top-nav">
+    <strong>Zomato Notes</strong>
+    <span>On-call Knowledge Base</span>
+  </nav>
+</header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <h2>Categories</h2>
+    <div id="categoryTree"></div>
+  </aside>
+
+  <section class="content">
+    <section class="panel">
+      <h1>Notes Dashboard</h1>
+      <div id="loading">Loading notes…</div>
+      <div id="error" class="error hidden"></div>
+
+      <form id="noteForm">
+        <input id="title" placeholder="Title" maxlength="120">
+        <textarea id="noteContent" placeholder="Content"></textarea>
+        <input id="tag" placeholder="Tag" value="work">
+        <button type="submit">Add Note</button>
+        <div id="formError" class="error hidden"></div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Plain Search</h2>
+      <div class="search-row">
+        <input id="searchBox" placeholder="Filter by title/content/tag…">
+        <select id="sortMode">
+          <option value="plain">Client Filter</option>
+          <option value="relevance">Relevance</option>
+          <option value="date">Date</option>
+        </select>
+      </div>
+      <div id="exactLookup" class="tool-row">
+        <input id="exactTitle" placeholder="Jump to exact title">
+        <select id="lookupAlgo">
+          <option value="iterative">Iterative binary search</option>
+          <option value="recursive">Recursive binary search</option>
+        </select>
+        <button id="lookupBtn" type="button">Find</button>
+      </div>
+      <div id="tagButtons" class="tag-buttons"></div>
+      <div id="notesList" class="notes-grid"></div>
+    </section>
+
+    <section class="panel smart-panel">
+      <h2>Smart Search (AI)</h2>
+      <p>Ranks the eight AI sample notes by embedding-based cosine similarity.</p>
+      <div class="search-row">
+        <input id="smartQuery" placeholder="e.g. leg day exercise plan">
+        <button id="smartBtn" type="button">Smart Search</button>
+      </div>
+      <div id="smartResults"></div>
+    </section>
+  </section>
+</main>
+
+<footer>Local capstone demo • Zomato Notes</footer>
+<script src="script.js"></script>
+</body>
+</html>
